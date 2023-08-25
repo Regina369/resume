@@ -1,0 +1,47 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+    <div>
+        <h1>{{make}} {{model}} ({{year}})</h1>
+        <p>Color:{{color}}</p>
+        <h2>Features:</h2>
+
+        <h3>Interior features</h3>
+        <p>Seats: {{features.interior.seats.material}}; color: {{features.interior.seats.color}}</p>
+        <p>Dashboard material: {{features.interior.dashboard.material}}; display type:
+            {{features.interior.dashboard.display.type}}</p>
+        <p>Dashboard display size: {{features.interior.dashboard.display.size}} inches</p>
+        <p>Audio System: {{features.interior.audio.system}}; speakers: {{features.interior.audio.speakers}}</p>
+        <p>Subwoofer: {{#if features.interior.audio.subwoofer}}Yes{{else}}No{{/if}}</p>
+        <p>Bluetooth: {{#if features.interior.audio.bluetooth}}Yes{{else}}No{{/if}}</p>
+        <p>USB: {{#if features.interior.audio.USB}}Yes{{else}}No{{/if}}</p>
+
+        <h3>Exterior features</h3>
+        <p>Wheels: size {{features.exterior.wheels.size}}; type: {{features.exterior.wheels.type}}, color:
+            {{features.exterior.wheels.color}}</p>
+        <p>Headlights: type {{features.exterior.headlights.type}}; brightness:
+            {{features.exterior.headlights.brightness}}; automatic: {{#if
+            features.exterior.headlights.automatic}}Yes{{else}}No{{/if}}</p>
+        <p>Sunroof: type {{features.exterior.sunroof.type}}; size: {{features.exterior.sunroof.size}}, automatic: {{#if
+            features.exterior.sunroof.automatic}}Yes{{else}}No{{/if}}</p>
+
+        <h3>Safety features</h3>
+        <p>Airbags: front {{features.safety.airbags.front}}; side {{features.safety.airbags.side}}; knee
+            {{features.safety.airbags.knee}}, Rear {{features.safety.airbags.rear}}</p>
+        <p>Blind spot monitoring: {{#if features.safety.assistance.blind_spot_monitoring}}Yes{{else}}No{{/if}}</p>
+        <p>Rear cross traffic alert: {{#if features.safety.assistance.rear_cross_traffic_alert}}Yes{{else}}No{{/if}}</p>
+        <p>Lane departure warning: {{#if features.safety.assistance.lane_departure_warning}}Yes{{else}}No{{/if}}</p>
+        <p>Adaptive cruise control: {{#if features.safety.assistance.adaptive_cruise_control}}Yes{{else}}No{{/if}}</p>
+        <p>Collision warning: {{#if features.safety.assistance.collision_warning}}Yes{{else}}No{{/if}}</p>
+    </div>
+</div>
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
