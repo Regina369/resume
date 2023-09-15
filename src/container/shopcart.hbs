@@ -1,0 +1,121 @@
+<main>
+
+    <nav class="">
+        <div class="nav">
+            {{#with navigation}}
+            {{#each links}}
+            <div class="nav-item">
+                <a href="{{#if href}}{{href}}{{else}}#{{/if}}"
+                    class="nav-link {{#unless href}}disabled{{/unless}}">{{text}}</a>
+            </div>
+            {{/each}}
+            {{/with}}
+        </div>
+    </nav>
+
+    <hr>
+
+    <div class="m-3">
+        <h1>{{header.title}}</h1>
+        <a href="{{header.button.link}}" class="btn btn-outline-secondary">{{header.button.text}}</a>
+    </div>
+
+    <hr>
+
+    {{#each goodsBlock}}
+    <div class="card m-3">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="{{image}}" class="card-img-top" alt="{{name}}" width="150" height="150">
+                </div>
+                <div class="col-md-3">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text">{{description}}</p>
+                </div>
+                <div class="col-md-2">
+                    <p class="card-text">{{price.title}}: {{price.value}}</p>
+                </div>
+                <div class="col-md-2">
+                    <p class="card-text">Кількість: {{amount}}</p>
+                </div>
+                <div class="col-md-1">
+                    {{#each buttons}}
+                    <button {{#if isPrimary}}class="btn btn-primary mt-4 mb-4" {{/if}} {{#if
+                        isDanger}}class="btn btn-outline-danger" {{/if}}>{{text}}</button>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+
+    <hr>
+
+    <div class="m-3">
+        <h4>{{total.title}}</h4>
+        <h1>{{total.amount}}</h1>
+        <p>{{total.delivery}}</p>
+        <div class="col-md-3">
+            {{#each total.buttons}}
+            <button {{#if isSuccess}}class="btn btn-success mt-4 mb-4" {{/if}} {{#if
+                isOutline}}class="btn btn-outline-success mb-5" {{/if}}>{{text}}</button>
+            {{/each}}
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="col m-2">
+        <h1 class="text-center">{{goodsOtherBlock.title}}</h1>
+        <div class="row">
+            {{#each goodsOtherBlock.cards}}
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{image}}" class="card-img-top" alt="{{title}}">
+                    <div class="card-body">
+                        <h3 class="card-title">{{title}}
+                            {{#if isHot}}<span
+                                class="badge text-bg-warning rounded-pill text-uppercase">Hot!</span>{{/if}}
+                            {{#if isNew}}<span
+                                class="badge text-bg-primary rounded-pill text-uppercase">New</span>{{/if}}
+                        </h3>
+                        <p class="card-text">{{description}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="m-2">
+        <div class="card bg-dark text-white mt-5 mb-5">
+            <div class="card-body">
+                <h2 class="card-title">{{subscribe.header}}</h2>
+                <p class="card-text mt-5 mb-3">{{subscribe.description}}</p>
+                <div class="col-md-3">
+                    {{#each subscribe.buttons}}
+                    <button href="{{link}}" class="btn btn-primary  mb-4"
+                        class="btn btn-outline-primary  mb-5">{{text}}</button>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+        <div class=" nav">
+            {{#each footer}}
+            <div class="nav-item">
+                {{#each this}}
+                <a href="{{link}}" class="nav-link {{#if @last}}disabled{{/if}}">{{text}}</a>
+                {{/each}}
+            </div>
+            {{/each}}
+        </div>
+    </footer>
+</main>
