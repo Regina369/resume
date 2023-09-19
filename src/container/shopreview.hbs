@@ -52,37 +52,46 @@
                     </div>
                 </div>
             </div>
-            {{/with}}
         </div>
     </div>
 
     <div class="col-4">
-        <div class="card">
-            <div class="col m-4" type="text-align: left;">
-                <div class="goods-info">
-                    {{#with goodsInfo}}
+
+        <div class="col m-4" type="text-align: left;">
+            <div class="goods-info">
+                {{#with goodsInfo}}
+                <div class="card m-3 p-4">
                     <img src="{{photo}}" alt="{{name}}">
+
                     <h3>{{name}}</h3>
-                    <p>Ціна: {{price}}</p>
+                </div>
+                <div class="card m-3 p-4">
+                    <b>Ціна: {{price}}</b>
                     {{#if inMarket}}
                     <p>В наявності</p>
                     {{else}}
                     <p>Немає в наявності</p>
                     {{/if}}
-                    <div class="buttons">
-                        {{#each buttons}}
-                        <a href="{{link}}" class="btn {{#if isPrimary}}btn-primary{{/if}}
-                            {{#if isSecondary}}btn-secondary{{/if}}">{{text}}</a>
-                        {{/each}}
+                    <div class="">
+                        <div class="buttons">
+                            {{#each buttons}}
+                            <button href="{{link}}" class="btn {{#if isPrimary}}btn-primary{{/if}}
+                            {{#if isSecondary}}btn-secondary{{/if}} m-2">{{text}}</button>
+                            {{/each}}
+                        </div>
                     </div>
+                </div>
+                <div class="card m-3 p-4">
                     <div class="seller">
                         <p>{{seller.title}}: {{seller.value}}</p>
                     </div>
-                    {{/with}}
                 </div>
+                {{/with}}
             </div>
         </div>
+
     </div>
+    {{/with}}
 
     <hr>
 
