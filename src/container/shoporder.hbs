@@ -241,35 +241,35 @@
                     isDanger}}class="btn btn-danger btn-block m-2" {{/if}} {{#if
                     isInfo}}class="btn btn-info btn-block m-2{{/if}}">{{text}}</button>
                 {{/each}}
-                </ul>
             </div>
         </div>
+    </div>
 
 
-        <div class="card col-12 m-4">
-            <div class="col m-2" type="text-align: left;">
-                <h3>{{total.title}}</h3>
-                <ul>
-                    {{#each total.item_list}}
-                    <p>{{name}} - {{price}}</p>
-                    {{/each}}
-                </ul>
-                <hr>
-                <ul>
-                    {{#each total.additional_info}}
-                    <p>{{text}}: {{value}}</p>
-                    {{/each}}
-                </ul>
-                <hr>
-                <div>{{total.total_price.text}}: {{total.total_price.value}}</div>
-                <ul>
-                    {{#each total.button}}
-                    <button {{#if isPrimary}}class="btn btn-primary m-8 my-4" {{/if}}{{#if
-                        isOutline}}class="btn btn-outline-primary" {{/if}}>{{text}}</button>
-                    {{/each}}
-                </ul>
-            </div>
+    <div class="card col-12 m-4">
+        <div class="col m-2" type="text-align: left;">
+            <h3>{{total.title}}</h3>
+            <ul>
+                {{#each total.item_list}}
+                <p>{{name}} - {{price}}</p>
+                {{/each}}
+            </ul>
+            <hr>
+            <ul>
+                {{#each total.additional_info}}
+                <p>{{text}}: {{value}}</p>
+                {{/each}}
+            </ul>
+            <hr>
+            <div>{{total.total_price.text}}: {{total.total_price.value}}</div>
+            <ul>
+                {{#each total.button}}
+                <button {{#if isPrimary}}class="btn btn-primary m-8 my-4" {{/if}}{{#if
+                    isOutline}}class="btn btn-outline-primary" {{/if}}>{{text}}</button>
+                {{/each}}
+            </ul>
         </div>
+    </div>
 
     </div>
 </main>

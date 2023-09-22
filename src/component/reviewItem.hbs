@@ -1,0 +1,25 @@
+<div class="review-item card m-3">
+    <div class="review-header">
+        <h6>{{userName}}</h6>
+        <p>{{date}}</p>
+    </div>
+    <div class="review-body">
+        <div class="review-text">
+            {{text}}
+        </div>
+        <div class="review-images">
+            {{#each images}}
+            <img src="{{this}}" alt="Review Image">
+            {{/each}}
+        </div>
+    </div>
+    <div class="comments">
+        {{#each comments}}
+        <div class="comment card m-3">
+            <h6>{{userName}}</h6>
+            <p>{{date}}</p>
+            <p>{{text}}</p>
+        </div>
+        {{/each}}
+    </div>
+</div>
