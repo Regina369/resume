@@ -3449,5 +3449,51 @@ router.get('/bootstrap3', function (req, res) {
 })
 
 // ================================================================
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/index8', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('index8', {
+    layout: 'bootstrap',
+    name: {
+      firstname: 'Regina',
+      lastname: 'Mishnova',
+    },
+    title: 'Resume project',
+    nameproject: 'Occultus',
+    pageNames: 'Список сторінок',
+    text: 'Лазерний захист на кварк основі',
+    buttons: [
+      {
+        text: 'shophome',
+        link: '/shophome',
+        isPrimary: true,
+      },
+      {
+        text: 'shophome',
+        link: '/shophorder',
+        isPrimary: true,
+      },
+      {
+        text: 'shophome',
+        link: '/shopprofile',
+        isPrimary: true,
+      },
+      {
+        text: 'shophome',
+        link: '/shopreview',
+        isPrimary: true,
+      },
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
 
 module.exports = router

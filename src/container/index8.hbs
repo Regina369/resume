@@ -1,0 +1,19 @@
+<main class="p-5">
+    <div class="m-3">
+        <div class="row">
+            <div class="col-6 ">{{name.firstname}} {{name.lastname}}</div>
+            <div class="col-6 text end">{{nameproject}}</div>
+        </div>
+
+        <div class="m-5>">
+            <p class="mt-5">{{pageNames}}</p>
+            <h2>{{text}}</h2>
+        </div>
+
+        <div class="col-2 mt-5">
+            {{#each buttons}}
+            <a href="{{link}}" class="{{#if isPrimary}}btn btn-primary m-2{{/if}}">{{text}}</a>
+            {{/each}}
+        </div>
+    </div>
+</main>
